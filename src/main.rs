@@ -185,6 +185,7 @@ async fn cmd_query(args: QueryArgs) {
         fl_info!("installed-repo-packages");
         PacmanQueryBuilder::native()
             .color(PacmanColor::Always)
+            .explicit(args.explicit)
             .query()
             .await
             .silent_unwrap(AppExitCode::PacmanError);
@@ -194,6 +195,7 @@ async fn cmd_query(args: QueryArgs) {
         fl_info!("installed-aur-packages");
         PacmanQueryBuilder::foreign()
             .color(PacmanColor::Always)
+            .explicit(args.explicit)
             .query()
             .await
             .silent_unwrap(AppExitCode::PacmanError);
@@ -203,6 +205,7 @@ async fn cmd_query(args: QueryArgs) {
         fl_info!("installed-packages");
         PacmanQueryBuilder::all()
             .color(PacmanColor::Always)
+            .explicit(args.explicit)
             .query()
             .await
             .silent_unwrap(AppExitCode::PacmanError);
@@ -211,6 +214,7 @@ async fn cmd_query(args: QueryArgs) {
     if let Some(info) = args.info {
         PacmanQueryBuilder::info()
             .package(info)
+            .explicit(args.explicit)
             .query()
             .await
             .silent_unwrap(AppExitCode::PacmanError);
