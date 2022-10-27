@@ -161,3 +161,6 @@ repo-check-dependencies = Repokontroll beroenden
 aur-check-dependencies = AUR kontroll beroenden
 query-owns = Få information om vilket paket som äger en fil
 description = En snabb och effektiv AUR hjälpare
+search-paging = sök
+checkupdates = Söker efter och returnerar tillgängliga paketuppdateringar
+query-explicit = Listar uttryckligen installerade paket [-Qe]
