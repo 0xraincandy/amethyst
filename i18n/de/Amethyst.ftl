@@ -9,18 +9,18 @@ missing-deps = Fehlende Packetabhängigkeiten
 continue = Fortfahren?
 # main
 run-as-root = Amethyst mit root Berechtigungen auszuführen ist nicht erlaubt und kann zu korrupten Systemen führen. Amethyst wird nach root Berechtigungen fragen, wenn diese nötig sein sollten.
-following-packages = Folgende Pakete wurden in der AUR gefunden:
+following-packages = Folgende Pakete wurden in dem AUR gefunden:
 aur-warning =
     Die AUR ist eine Plattform, welche von der Community verwaltete Pakete zur Verfügung stellt und die Sicherheit eines Paketes nicht gewährleisten kann.
-    Es wird empfohlen die PKGBUILD-Dateien der Pakete zu überprüfen bevor Sie diese Pakete installieren, da manche PKGBUILD-Dateien gefährlich sein können. 
+    Es wird empfohlen, die PKGBUILD-Dateien der Pakete zu überprüfen, bevor Sie diese Pakete installieren, da manche PKGBUILD-Dateien gefährlich sein könnten. 
     Diese Warnung kann in der Konfigurationsdatei dekativiert werden.
 are-you-sure = Sie sich sicher, dass Sie fortfahren möchten?
 uninstalling-packages = Folgende Pakete werden deinstalliert: { $packages }
 system-upgrade = Führe Systemaktualisierung durch
 removing-orphans = Deinstalliere nicht benötigte Pakete
 couldnt-find-packages = Folgende Pakete wurden nicht in den Pacman-Paketquellen oder der AUR gefunden: { $packages }
-searching-repos = Suche Paketquellen nach { $query }
-searching-aur = Suche AUR nach { $query }
+searching-repos = Durchsuche Paketquellen nach { $query }
+searching-aur = Durchsuche AUR nach { $query }
 no-results = Keine Ergebnisse gefunden
 results = Ergebnisse:
 installed-repo-packages = Aus den Pacman-Paketquellen installierte Pakete:
