@@ -93,3 +93,8 @@ pub fn wrap_text<S: AsRef<str>>(s: S, padding: usize) -> Vec<String> {
         .map(String::from)
         .collect()
 }
+
+pub fn is_run_with_root() -> bool {
+    let uid = unsafe { libc::geteuid() };
+    uid == 0
+}
