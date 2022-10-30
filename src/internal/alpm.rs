@@ -97,4 +97,19 @@ impl Alpm {
     pub fn handler(&self) -> &alpm::Alpm {
         &self.0
     }
+
+    pub fn group_packages(&self, group_name: String) -> Result<Vec<AlpmPackage>, Error> {
+        let mut packages = Vec::new();
+        for db in &self.0.syncdbs() {
+            if let Ok(group) = db.group(group_name.clone()) {
+                for package in group.packages() {
+                    packages.push(AlpmPackage::Found(package));
+                }
+            }
+        }
+        if packages.is_empty() {
+            return Err(Error::Alpm(alpm::Error::PkgNotFound));
+        }
+        Ok(packages)
+    }
 }
