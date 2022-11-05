@@ -13,7 +13,7 @@
     <a href="https://git.getcryst.al/crystal/software/amethyst/-/issues"><img alt="GitLab issues" src="https://img.shields.io/gitlab/issues/open-raw/crystal/software/amethyst?gitlab_url=https%3A%2F%2Fgit.getcryst.al"></a>
     <a href="https://git.getcryst.al/crystal/software/amethyst/-/merge_requests"><img alt="GitLab merge requests" src="https://img.shields.io/gitlab/merge-requests/open-raw/crystal/software/amethyst?gitlab_url=https%3A%2F%2Fgit.getcryst.al"></a><br>
     <a href="https://discord.gg/hYJgu8K5aA"><img alt="Discord" src="https://img.shields.io/discord/825473796227858482?color=blue&label=Discord&logo=Discord&logoColor=white"> </a>
-    <a href="https://git.getcryst.al/michal"><img src="https://img.shields.io/badge/Maintainer-@not%2D-my%2D-segfault-brightgreen" alt="The maintainer of this repository" href="https://git.getcryst.al/michal"></a><br>
+    <a href="https://git.getcryst.al/michal"><img src="https://img.shields.io/badge/Maintainer-@Michal%20Stopyra-brightgreen" alt="The maintainer of this repository" href="https://git.getcryst.al/michal"></a><br>
     <a href="https://fosstodon.org/@crystal_linux"><img alt="Mastodon Follow" src="https://img.shields.io/mastodon/follow/108618426259408142?domain=https%3A%2F%2Ffosstodon.org"></a>
     <a href="https://twitter.com/crystal_linux"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/crystal_linux"></a>
 </p>
