@@ -3,8 +3,8 @@ use builder::pacman::{PacmanColor, PacmanQueryBuilder};
 use clap::Parser;
 
 use internal::commands::ShellCommand;
-use internal::detect;
 use internal::error::SilentUnwrap;
+use internal::{detect, utils};
 
 use crate::args::{InstallArgs, Operation, QueryArgs, RemoveArgs};
 use crate::interact::page_string;
@@ -32,7 +32,7 @@ use logging::init_logger;
 #[tokio::main]
 async fn main() {
     color_eyre::install().unwrap();
-    if unsafe { libc::geteuid() } == 0 {
+    if utils::is_run_with_root() {
         fl_crash!(AppExitCode::RunAsRoot, "run-as-root");
     }
 
