@@ -48,7 +48,7 @@ pub async fn download_aur_source(mut ctx: BuildContext) -> AppResult<BuildContex
     );
 
     let cache_dir = get_cache_dir();
-    let pkg_dir = cache_dir.join(&pkg_name);
+    let pkg_dir = cache_dir.join(pkg_name);
 
     if pkg_dir.exists() {
         pb.set_message(format!(
@@ -146,7 +146,7 @@ pub fn create_dependency_batches(deps: Vec<&PackageInfo>) -> Vec<Vec<&PackageInf
             relaxed = true;
         } else {
             tracing::debug!("Created batch {current_batch:?}");
-            batches.push(current_batch.into_iter().map(|(_, v)| v).collect());
+            batches.push(current_batch.into_values().collect());
             relaxed = false;
         }
     }

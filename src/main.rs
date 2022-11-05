@@ -175,7 +175,7 @@ async fn cmd_search(args: InstallArgs, options: Options) {
         get_logger().print_list(&list, "\n", 0);
 
         if list.join("\n").lines().count() > crossterm::terminal::size().unwrap().1 as usize {
-            page_string(&list.join("\n")).silent_unwrap(AppExitCode::Other);
+            page_string(list.join("\n")).silent_unwrap(AppExitCode::Other);
         }
     }
 }
