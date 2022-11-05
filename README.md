@@ -8,7 +8,7 @@
 
 <p align="center">
     <a href="https://getcryst.al/site/docs/amethyst/getting-started"><img src="https://img.shields.io/badge/Documentation-Click%20here!-informational"></a>
-    <a href="https://git.getcryst.al/crystal/software/amethyst"><img src="https://git.getcryst.al/crystal/software/amethyst/actions/workflows/test.yml/badge.svg"></a><br>
+    <a href="https://git.getcryst.al/crystal/software/amethyst"><img src="https://github.com/crystal-linux/amethyst/actions/workflows/test.yml/badge.svg"></a><br>
     <a href="https://git.getcryst.al/crystal/software/amethyst/-/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg" alt="License"></a>
     <a href="https://git.getcryst.al/crystal/software/amethyst/-/issues"><img alt="GitLab issues" src="https://img.shields.io/gitlab/issues/open-raw/crystal/software/amethyst?gitlab_url=https%3A%2F%2Fgit.getcryst.al"></a>
     <a href="https://git.getcryst.al/crystal/software/amethyst/-/merge_requests"><img alt="GitLab merge requests" src="https://img.shields.io/gitlab/merge-requests/open-raw/crystal/software/amethyst?gitlab_url=https%3A%2F%2Fgit.getcryst.al"></a><br>
