@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/crystal-linux/amethyst/">
+  <a href="https://git.getcryst.al/crystal/software/amethyst">
     <img src="./logo.svg" alt="Logo" width="150" height="150">
   </a>
 </p>
@@ -8,12 +8,12 @@
 
 <p align="center">
     <a href="https://getcryst.al/site/docs/amethyst/getting-started"><img src="https://img.shields.io/badge/Documentation-Click%20here!-informational"></a>
-    <a href="https://github.com/crystal-linux/amethyst"><img src="https://github.com/crystal-linux/amethyst/actions/workflows/test.yml/badge.svg"></a><br>
-    <a href="https://github.com/crystal-linux/.github/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg" alt="License"></a>
-    <a href="https://github.com/crystal-linux/amethyst/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/crystal-linux/amethyst"></a>
-    <a href="https://github.com/crystal-linux/amethyst/pulls"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr-raw/crystal-linux/amethyst"></a><br>
+    <a href="https://git.getcryst.al/crystal/software/amethyst"><img src="https://git.getcryst.al/crystal/software/amethyst/actions/workflows/test.yml/badge.svg"></a><br>
+    <a href="https://git.getcryst.al/crystal/software/amethyst/-/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg" alt="License"></a>
+    <a href="https://git.getcryst.al/crystal/software/amethyst/-/issues"><img alt="GitLab issues" src="https://img.shields.io/github/issues-raw/crystal-linux/amethyst"></a>
+    <a href="https://git.getcryst.al/crystal/software/amethyst/-/pulls"><img alt="GitLab pull requests" src="https://img.shields.io/github/issues-pr-raw/crystal-linux/amethyst"></a><br>
     <a href="https://discord.gg/hYJgu8K5aA"><img alt="Discord" src="https://img.shields.io/discord/825473796227858482?color=blue&label=Discord&logo=Discord&logoColor=white"> </a>
-    <a href="https://github.com/not-my-segfault"><img src="https://img.shields.io/badge/Maintainer-@not%2D-my%2D-segfault-brightgreen" alt="The maintainer of this repository" href="https://github.com/not-my-segfault"></a><br>
+    <a href="https://git.getcryst.al/michal"><img src="https://img.shields.io/badge/Maintainer-@not%2D-my%2D-segfault-brightgreen" alt="The maintainer of this repository" href="https://git.getcryst.al/michal"></a><br>
     <a href="https://fosstodon.org/@crystal_linux"><img alt="Mastodon Follow" src="https://img.shields.io/mastodon/follow/108618426259408142?domain=https%3A%2F%2Ffosstodon.org"></a>
     <a href="https://twitter.com/crystal_linux"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/crystal_linux"></a>
 </p>
@@ -52,7 +52,7 @@ Made for Crystal, compatible with any Arch-based Linux distribution.
 
 ### Install on non-Crystal distros
 - `sudo pacman -S --needed base-devel pacman-contrib cargo`
-- `git clone https://github.com/crystal-linux-packages/ame`
+- `git clone https://git.getcryst.al/crystal/pkgbuilds/ame`
 - `cd ame && makepkg -si`
 
 <br>
