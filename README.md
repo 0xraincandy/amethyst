@@ -55,7 +55,7 @@ Made for Crystal, compatible with any Arch-based Linux distribution.
 - `git clone https://git.getcryst.al/crystal/pkgbuilds/ame`
 - `cd ame && makepkg -si`  
   
-Amethyst is also available as an [AUR package](https://aur.archlinux.org/packages/ame).  
+Amethyst is also available as an [AUR package](https://aur.archlinux.org/packages/ame).
 <br>
 
 #### Debug/development builds
