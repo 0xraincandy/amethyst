@@ -53,7 +53,9 @@ Made for Crystal, compatible with any Arch-based Linux distribution.
 ### Install on non-Crystal distros
 - `sudo pacman -S --needed base-devel pacman-contrib cargo`
 - `git clone https://git.getcryst.al/crystal/pkgbuilds/ame`
-- `cd ame && makepkg -si`
+- `cd ame && makepkg -si`  
+  
+Amethyst is also available as an [AUR package](https://aur.archlinux.org/packages/ame).  
 
 <br>
 
