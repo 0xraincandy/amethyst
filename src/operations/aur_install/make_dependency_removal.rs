@@ -1,7 +1,8 @@
+use crate::error::AppResult;
 use crate::{
     builder::pacman::PacmanUninstallBuilder,
     fl, fl_info, fl_prompt,
-    internal::{dependencies::DependencyInformation, error::AppResult, structs::Options},
+    internal::{dependencies::DependencyInformation, structs::Options},
     prompt,
 };
 

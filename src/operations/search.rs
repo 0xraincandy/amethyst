@@ -2,9 +2,9 @@ use std::fmt::Display;
 use std::fmt::Formatter;
 use std::str::FromStr;
 
+use crate::error::SilentUnwrap;
 use crate::fl;
 use crate::internal::alpm::Alpm;
-use crate::internal::error::SilentUnwrap;
 use crate::internal::exit_code::AppExitCode;
 use crate::internal::rpc::rpcsearch;
 use crate::internal::utils::wrap_text;

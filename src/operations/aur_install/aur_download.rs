@@ -3,10 +3,8 @@ use aur_rpc::PackageInfo;
 use futures::future;
 
 use crate::{
-    fl_info,
-    internal::{dependencies::DependencyInformation, error::AppResult, structs::Options},
-    multi_progress, normal_output,
-    operations::BuildContext,
+    error::AppResult, fl_info, internal::dependencies::DependencyInformation,
+    internal::structs::Options, multi_progress, normal_output, operations::BuildContext,
 };
 
 use super::aur_review::AurReview;

@@ -1,8 +1,8 @@
 use std::path::{Path, PathBuf};
 
-use crate::internal::{
-    commands::ShellCommand,
+use crate::{
     error::{AppError, AppResult},
+    internal::commands::ShellCommand,
 };
 
 #[derive(Debug, Default)]

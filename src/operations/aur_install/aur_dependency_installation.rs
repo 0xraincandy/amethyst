@@ -3,8 +3,9 @@ use futures::future;
 
 use crate::{
     builder::{makepkg::MakePkgBuilder, pacman::PacmanInstallBuilder},
+    error::AppResult,
     fl, fl_info,
-    internal::{dependencies::DependencyInformation, error::AppResult},
+    internal::dependencies::DependencyInformation,
     multi_progress, normal_output,
     operations::{
         aur_install::common::{build_and_install, create_dependency_batches, download_aur_source},

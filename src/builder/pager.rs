@@ -1,9 +1,7 @@
 use std::path::{Path, PathBuf};
 
-use crate::{
-    internal::{commands::ShellCommand, error::AppResult},
-    with_suspended_output,
-};
+use crate::error::AppResult;
+use crate::{internal::commands::ShellCommand, with_suspended_output};
 
 #[derive(Default)]
 pub struct PagerBuilder {

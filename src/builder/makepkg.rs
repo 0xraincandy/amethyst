@@ -3,10 +3,8 @@ use std::path::{Path, PathBuf};
 
 use tokio::process::Child;
 
-use crate::internal::{
-    commands::ShellCommand,
-    error::{AppError, AppResult},
-};
+use crate::error::{AppError, AppResult};
+use crate::internal::commands::ShellCommand;
 
 #[derive(Default, Debug, Clone)]
 pub struct MakePkgBuilder {

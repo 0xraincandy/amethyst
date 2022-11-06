@@ -38,6 +38,7 @@ dependencies = [
  "rust-embed",
  "serde",
  "textwrap 0.16.0",
+ "thiserror",
  "tokio",
  "toml",
  "tracing",

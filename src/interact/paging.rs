@@ -1,9 +1,9 @@
 use std::env;
 use std::fmt::Write;
 
+use crate::error::AppError;
+use crate::error::AppResult;
 use crate::fl;
-use crate::internal::error::AppError;
-use crate::internal::error::AppResult;
 use crate::with_suspended_output;
 
 use minus::Pager;

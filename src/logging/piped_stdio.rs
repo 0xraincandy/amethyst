@@ -5,7 +5,7 @@ use tokio::{
     process::{ChildStderr, ChildStdout},
 };
 
-use crate::internal::error::{AppError, AppResult};
+use crate::error::{AppError, AppResult};
 
 pub struct StdioReader {
     stdout: ChildStdout,

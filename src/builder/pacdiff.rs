@@ -1,7 +1,5 @@
-use crate::internal::{
-    commands::{ShellCommand, StringOutput},
-    error::{AppError, AppResult},
-};
+use crate::error::{AppError, AppResult};
+use crate::internal::commands::{ShellCommand, StringOutput};
 
 #[derive(Debug, Default)]
 pub struct PacdiffBuilder {}

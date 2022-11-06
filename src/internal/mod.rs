@@ -9,7 +9,6 @@ pub mod commands;
 pub mod config;
 pub mod dependencies;
 mod detect;
-pub mod error;
 pub mod exit_code;
 pub mod rpc;
 mod sort;

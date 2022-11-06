@@ -23,6 +23,8 @@ impl Display for Error {
     }
 }
 
+impl std::error::Error for Error {}
+
 impl From<alpm::Error> for Error {
     fn from(err: alpm::Error) -> Self {
         Error::Alpm(err)

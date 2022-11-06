@@ -15,6 +15,7 @@ use tokio::{
     task,
 };
 
+use crate::error::{AppError, AppResult};
 use crate::{
     builder::{
         git::{GitCloneBuilder, GitPullBuilder},
@@ -25,7 +26,6 @@ use crate::{
     crash, fl, fl_info,
     internal::{
         alpm::{Alpm, PackageFrom},
-        error::{AppError, AppResult},
         exit_code::AppExitCode,
         utils::{get_cache_dir, wrap_text},
     },

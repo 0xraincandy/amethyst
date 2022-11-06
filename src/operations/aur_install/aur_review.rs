@@ -1,14 +1,10 @@
 use tokio::fs;
 
+use crate::error::{AppError, AppResult};
 use crate::{
     builder::pager::PagerBuilder,
     fl, fl_info, fl_prompt,
-    internal::{
-        dependencies::DependencyInformation,
-        error::{AppError, AppResult},
-        structs::Options,
-        utils::get_cache_dir,
-    },
+    internal::{dependencies::DependencyInformation, structs::Options, utils::get_cache_dir},
     multi_select, prompt, select_opt,
 };
 

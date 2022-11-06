@@ -1,6 +1,6 @@
 use aur_rpc::{PackageInfo, PackageMetadata, SearchField};
 
-use super::error::AppResult;
+use crate::error::AppResult;
 pub const URL: &str = "https://aur.archlinux.org/";
 
 pub async fn rpcinfo(pkg: &str) -> AppResult<Option<PackageInfo>> {

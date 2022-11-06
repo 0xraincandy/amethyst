@@ -1,8 +1,8 @@
 use std::path::{Path, PathBuf};
 
+use crate::error::AppResult;
 use crate::internal::{
     commands::{ShellCommand, StringOutput},
-    error::AppResult,
     is_tty,
     structs::Options,
 };

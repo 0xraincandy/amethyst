@@ -1,9 +1,10 @@
 use std::collections::HashSet;
 
+use crate::error::AppResult;
 use crate::{
     builder::pacman::PacmanInstallBuilder,
     fl_info,
-    internal::{dependencies::DependencyInformation, error::AppResult, structs::Options},
+    internal::{dependencies::DependencyInformation, structs::Options},
 };
 
 use super::{aur_dependency_installation::AurDependencyInstallation, BuildContext};

@@ -4,9 +4,9 @@ use clap::Parser;
 
 use internal::commands::ShellCommand;
 use internal::detect;
-use internal::error::SilentUnwrap;
 
 use crate::args::{InstallArgs, Operation, QueryArgs, RemoveArgs};
+use crate::error::SilentUnwrap;
 use crate::interact::page_string;
 use crate::internal::config::Config;
 use crate::internal::exit_code::AppExitCode;
@@ -21,6 +21,7 @@ use std::str::FromStr;
 
 mod args;
 mod builder;
+mod error;
 mod interact;
 mod internal;
 mod logging;

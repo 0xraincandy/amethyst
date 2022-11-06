@@ -1,13 +1,10 @@
 use crossterm::style::Stylize;
 use futures::future;
 
+use crate::error::{AppError, AppResult};
 use crate::{
     fl, fl_prompt,
-    internal::{
-        dependencies::DependencyInformation,
-        error::{AppError, AppResult},
-        structs::Options,
-    },
+    internal::{dependencies::DependencyInformation, structs::Options},
     logging::output::{print_aur_package_list, print_dependency_list},
     normal_output, prompt, spinner,
 };

@@ -1,7 +1,7 @@
 use crate::args::UpgradeArgs;
 use crate::builder::pacman::{PacmanColor, PacmanQueryBuilder, PacmanUpgradeBuilder};
+use crate::error::SilentUnwrap;
 use crate::internal::detect;
-use crate::internal::error::SilentUnwrap;
 use crate::internal::exit_code::AppExitCode;
 use crate::internal::rpc::rpcinfo;
 use crate::operations::aur_install::aur_install;

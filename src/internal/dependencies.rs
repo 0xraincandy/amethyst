@@ -5,7 +5,7 @@ use futures::future;
 
 use crate::builder::pacman::{PacmanQueryBuilder, PacmanSearchBuilder};
 
-use super::error::{AppError, AppResult};
+use crate::error::{AppError, AppResult};
 use lazy_regex::regex;
 
 #[derive(Clone, Debug)]

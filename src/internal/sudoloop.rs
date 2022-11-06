@@ -2,7 +2,7 @@ use std::time::Duration;
 
 use crate::ShellCommand;
 
-use super::error::AppResult;
+use crate::error::AppResult;
 
 /// Loop sudo so it doesn't time out
 #[tracing::instrument(level = "trace")]

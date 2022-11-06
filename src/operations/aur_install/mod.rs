@@ -2,7 +2,7 @@ use aur_rpc::PackageInfo;
 
 use std::path::{Path, PathBuf};
 
-use crate::internal::error::{AppError, AppResult};
+use crate::error::{AppError, AppResult};
 
 use crate::internal::exit_code::AppExitCode;
 use crate::{cancelled, crash, fl, fl_crash, Options};

@@ -1,7 +1,8 @@
+use crate::error::AppResult;
 use crate::{
     builder::{makepkg::MakePkgBuilder, pacman::PacmanInstallBuilder},
     fl,
-    internal::{dependencies::DependencyInformation, error::AppResult, structs::Options},
+    internal::{dependencies::DependencyInformation, structs::Options},
     operations::aur_install::{
         common::build_and_install, make_dependency_removal::MakeDependencyRemoval,
     },

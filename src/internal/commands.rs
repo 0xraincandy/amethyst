@@ -4,8 +4,8 @@ use std::path::{Path, PathBuf};
 use std::process::{ExitStatus, Stdio};
 use tokio::process::{Child, Command};
 
+use crate::error::{AppError, AppResult};
 use crate::internal::config::Config;
-use crate::internal::error::{AppError, AppResult};
 use crate::internal::is_tty;
 
 pub struct StringOutput {

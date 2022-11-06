@@ -1,4 +1,5 @@
-use crate::internal::{commands::ShellCommand, error::AppResult};
+use crate::error::AppResult;
+use crate::internal::commands::ShellCommand;
 
 #[derive(Debug, Default)]
 pub struct PaccacheBuilder {

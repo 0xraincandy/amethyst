@@ -8,7 +8,7 @@ use textwrap::wrap;
 use crate::{internal::exit_code::AppExitCode, logging::get_logger};
 use lazy_static::lazy_static;
 
-use super::error::{AppError, SilentUnwrap};
+use crate::error::{AppError, SilentUnwrap};
 
 #[macro_export]
 /// Macro for printing a message and destructively exiting
