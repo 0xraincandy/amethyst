@@ -22,9 +22,9 @@ pub struct Args {
     #[arg(long = "noconfirm", global = true, help = fl!("no-confirm"))]
     pub no_confirm: bool,
 
-    // not gonna lie the only reason this option is here is because
-    // i was trying to figure out if paccache had a --noconfirm option.
-    // so basically, it doesn't, but hey, we might as well have it here
+    // Not gonna lie the only reason this option is here is because
+    // I was trying to figure out if paccache had a --noconfirm option.
+    // So basically, it doesn't, but hey, we might as well have it here
     // anyways as some pacman commands can have a --quiet flag passed
     // to them.
     #[arg(long, short, global = true, help = fl!("quiet"))]

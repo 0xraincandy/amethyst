@@ -22,17 +22,14 @@ mod sudoloop;
 #[macro_export]
 macro_rules! uwu {
     ($x:expr) => {{
-        let uwu: String = String::from($x);
-
-        let uwu = uwu.replace("l", "w");
-        let uwu = uwu.replace("L", "W");
-        let uwu = uwu.replace("r", "w");
-        let uwu = uwu.replace("R", "W");
-        let uwu = uwu.replace("na", "nya");
-        let uwu = uwu.replace("Na", "Nya");
-        let uwu = uwu.replace("NA", "NYA");
-
-        uwu
+        String::from($x)
+            .replace("l", "w")
+            .replace("L", "W")
+            .replace("r", "w")
+            .replace("R", "W")
+            .replace("na", "nya")
+            .replace("Na", "Nya")
+            .replace("NA", "NYA")
     }};
 }
 
