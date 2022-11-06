@@ -69,7 +69,7 @@ features = ["toml"]
 
 [dependencies.tokio]
 version = "1.21.0"
-features = ["process", "macros", "rt-multi-thread"]
+features = ["process", "macros", "rt-multi-thread", "tracing"]
 
 [build-dependencies]
 cargo_toml = "0.13.0"
