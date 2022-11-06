@@ -21,6 +21,10 @@ pub async fn sort(input: &[String], options: Options) -> Sorted {
         if package_result.is_ok() {
             tracing::debug!("{} found in repos", package);
             repo_packages.push(package);
+        } else if let Ok(pkgs) = alpm.group_packages(package.clone()) {
+            tracing::debug!("{} group found in repos", package);
+            pkgs.iter()
+                .for_each(|pkg| repo_packages.push(pkg.name().to_string()));
         } else if aur_query.iter().any(|p| p.metadata.name == package) {
             tracing::debug!("{} found in AUR", package);
             aur_packages.push(package.to_string());

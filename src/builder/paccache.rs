@@ -40,7 +40,7 @@ impl PaccacheBuilder {
         }
 
         command
-            .args(&["-r", &format!("-k{}", self.keep)])
+            .args(["-r", &format!("-k{}", self.keep)])
             .wait_success()
             .await
     }

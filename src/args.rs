@@ -11,7 +11,7 @@ static VERSION: &str = concat!(
 );
 
 #[derive(Debug, Clone, Parser)]
-#[clap(bin_name = "ame", name = "Amethyst", version = VERSION, about = env ! ("CARGO_PKG_DESCRIPTION"), infer_subcommands = true)]
+#[command(bin_name = "ame", name = "Amethyst", version = VERSION, about = fl!("description"), infer_subcommands = true)]
 pub struct Args {
     #[command(subcommand)]
     pub subcommand: Option<Operation>,
@@ -60,6 +60,9 @@ pub enum Operation {
     #[command(bin_name = "ame", name = "clean", short_flag = 'C', about = fl!("clean"))]
     Clean,
 
+    #[command(bin_name = "ame", name = "checkupdates", about = fl!("checkupdates"))]
+    CheckUpdates,
+
     #[command(bin_name = "ame", name = "diff", short_flag = 'd', about = fl!("diff"))]
     Diff,
 }
@@ -102,8 +105,14 @@ pub struct QueryArgs {
     #[arg(long, short, help = fl!("query-repo"))]
     pub repo: bool,
 
+    #[arg(long, short, help = fl!("query-explicit"))]
+    pub explicit: bool,
+
     #[arg(long, short, help = fl!("query-info"))]
     pub info: Option<String>,
+
+    #[arg(long, short, help = fl!("query-owns"))]
+    pub owns: Option<String>,
 }
 
 #[derive(Default, Debug, Clone, Parser)]

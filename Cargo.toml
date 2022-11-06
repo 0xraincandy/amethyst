@@ -37,10 +37,9 @@ clap = { version = "4.0.19", features = [ "derive", "wrap_help" ] }
 regex = { version = "1.7.0", default-features = false, features = [ "std", "unicode-perl" ] }
 colored = "2.0.0"
 serde = { version = "1.0.147", default-features = false, features = [ "derive", "serde_derive" ] }
-native-tls = { version = "0.2.11", default-features = false }
 libc = { version = "0.2.137", default-features = false }
 async-recursion = "1.0.0"
-aur-rpc = "0.2.2"
+aur-rpc = { version = "0.2.2", default-features = false, features = ["rustls-tls"] }
 futures = "0.3.25"
 tracing = "0.1.37"
 tracing-subscriber = { version = "0.3.16", features = ["env-filter"] }
@@ -61,9 +60,9 @@ tracing-error = "0.2.0"
 fuzzy-matcher = "0.3.7"
 i18n-embed = { version = "0.13.4", features = ["fluent-system", "desktop-requester"] }
 i18n-embed-fl = "0.6.4"
+thiserror = "1.0.37"
 rust-embed = "6.4.2"
 unic-langid = "0.9.1"
-thiserror = "1.0.37"
 
 [dependencies.config]
 version = "0.13.2"

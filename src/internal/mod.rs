@@ -52,5 +52,5 @@ pub fn uwu_enabled() -> bool {
 /// Checks if we're running in a tty. If we do we can assume that
 /// the output can safely be colorized.
 pub fn is_tty() -> bool {
-    (unsafe { libc::isatty(libc::STDIN_FILENO as i32) } != 0)
+    (unsafe { libc::isatty(libc::STDIN_FILENO) } != 0)
 }

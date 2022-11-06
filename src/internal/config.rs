@@ -77,6 +77,6 @@ impl Config {
         lazy_static! {
             static ref CONFIG: Config = Config::read();
         }
-        &*CONFIG
+        &CONFIG
     }
 }

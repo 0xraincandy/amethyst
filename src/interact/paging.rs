@@ -15,7 +15,7 @@ pub fn page_string<S: ToString>(content: S) -> AppResult<()> {
             + &format!(
                 " | Q: {} | /: {} | n: {} | p: {}",
                 fl!("quit"),
-                fl!("search"),
+                fl!("search-paging"),
                 fl!("next-result"),
                 fl!("previous-result")
             ),

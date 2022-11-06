@@ -117,7 +117,7 @@ remove-installed-make-deps = Do you want to remove the installed make dependenci
 done = Done!
 
 # operations::aur_install
-aur-rpc-crash = AUR RPC Call failed with
+aur-rpc-crash = AUR RPC Call failed with: {$error}
 failed-to-build = Failed to build
 makepkg-failed = makepkg failed
 unknown-error = Unknown error
@@ -132,7 +132,7 @@ error-occurred = An error occurred
 
 # internal::detect
 sudo-prompt-failed = Sudo prompt failed
-scanning-pacnew-files = Scanning for pacnew files"
+scanning-pacnew-files = Scanning for pacnew files
 no-pacnew-found = No .pacnew files found
 pacnew-found = pacnew files found
 pacnew-warning =
@@ -142,14 +142,14 @@ pacnew-warning =
 run-pacdiff-now = Would you like to run pacdiff now?
 pacdiff-warning =
     Pacdiff uses vimdiff by default to edit files for merging. You can focus panes by mousing over them and pressing left click, and scroll up and down using your mouse's scroll wheel (or the arrow keys). To exit vimdiff, press the following key combination: ESC, :qa!, ENTER
-    You can surpress this warning in the future by setting `pacdiff_warn` to "false" in ~/.config/ame/config.toml
+    You can suppress this warning in the future by setting `pacdiff_warn` to "false" in ~/.config/ame/config.toml
 
 # internal::config
 config-docs = # See https://getcryst.al/docs/amethyst/config for more information on config keys
 
 # internal::paging
 quit = quit
-search = search
+search-paging = search
 next-result = next result
 previous-result = previous result
 
@@ -166,6 +166,7 @@ query = Queries installed packages
 upgrade = Upgrades locally installed packages to their latest versions (Default)
 gencomp = Generates shell completions for supported shells (bash, fish, elvish, pwsh)
 clean = Removes all orphaned packages
+checkupdates = Queries for and returns available package updates
 diff = Runs pacdiff
 install-packages = The name of the package(s) to install or search for
 install-aur = Operate only on AUR packages
@@ -175,7 +176,10 @@ install-by = Searches by a specific field
 remove-packages = The name of the package(s) to remove
 query-aur = Lists AUR/foreign packages [-Qa, -Qm]
 query-repo = Lists repo/native packages [-Qr, -Qn]
+query-explicit = Lists explicitly installed packages [-Qe]
 query-info = Get information about a specific package
+query-owns = Get information about which package owns a file
 upgrade-repo = Upgrades only repo/native packages
 upgrade-aur = Upgrades only from the AUR
 gencomp-shell = The shell to generate completions for (bash, fish, elvish, pwsh, fig)
+description = A fast and efficient AUR helper

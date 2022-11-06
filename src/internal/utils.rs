@@ -54,7 +54,7 @@ pub fn get_config_dir() -> &'static Path {
         static ref CONFIG_DIR: &'static Path = create_if_not_exist(get_directories().config_dir());
     }
 
-    *CONFIG_DIR
+    &CONFIG_DIR
 }
 
 pub fn get_cache_dir() -> &'static Path {
@@ -62,7 +62,7 @@ pub fn get_cache_dir() -> &'static Path {
         static ref CACHE_DIR: &'static Path = create_if_not_exist(get_directories().cache_dir());
     }
 
-    *CACHE_DIR
+    &CACHE_DIR
 }
 
 fn get_directories() -> &'static ProjectDirs {
@@ -70,7 +70,7 @@ fn get_directories() -> &'static ProjectDirs {
         static ref DIRECTORIES: ProjectDirs = ProjectDirs::from("com", "crystal", "ame").unwrap();
     }
 
-    &*DIRECTORIES
+    &DIRECTORIES
 }
 
 fn create_if_not_exist(dir: &Path) -> &Path {
@@ -92,4 +92,9 @@ pub fn wrap_text<S: AsRef<str>>(s: S, padding: usize) -> Vec<String> {
         .into_iter()
         .map(String::from)
         .collect()
+}
+
+pub fn is_run_with_root() -> bool {
+    let uid = unsafe { libc::geteuid() };
+    uid == 0
 }

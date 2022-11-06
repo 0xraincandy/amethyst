@@ -101,6 +101,7 @@ impl PacmanInstallBuilder {
 pub struct PacmanQueryBuilder {
     query_type: PacmanQueryType,
     color: PacmanColor,
+    explicit: bool,
     packages: Vec<String>,
 }
 
@@ -111,6 +112,7 @@ enum PacmanQueryType {
     Info,
     Native,
     Orphaned,
+    Owns,
 }
 
 #[derive(Clone, Copy, Debug)]
@@ -132,6 +134,7 @@ impl PacmanQueryBuilder {
         Self {
             query_type,
             color: PacmanColor::default(),
+            explicit: false,
             packages: Vec::new(),
         }
     }
@@ -156,6 +159,10 @@ impl PacmanQueryBuilder {
         Self::new(PacmanQueryType::Orphaned)
     }
 
+    pub fn owns() -> Self {
+        Self::new(PacmanQueryType::Owns)
+    }
+
     pub fn package(mut self, package: String) -> Self {
         self.packages.push(package);
 
@@ -172,6 +179,12 @@ impl PacmanQueryBuilder {
 
     pub fn color(mut self, color: PacmanColor) -> Self {
         self.color = color;
+
+        self
+    }
+
+    pub fn explicit(mut self, explicit: bool) -> Self {
+        self.explicit = explicit;
 
         self
     }
@@ -212,6 +225,7 @@ impl PacmanQueryBuilder {
             PacmanQueryType::Info => command.arg("-i"),
             PacmanQueryType::Native => command.arg("-n"),
             PacmanQueryType::Orphaned => command.arg("-dtq"),
+            PacmanQueryType::Owns => command.arg("-o"),
             PacmanQueryType::All => command,
         };
 
@@ -227,6 +241,10 @@ impl PacmanQueryBuilder {
             }
             PacmanColor::Never => command.arg("never"),
         };
+
+        if self.explicit {
+            command = command.arg("--explicit")
+        }
 
         command.args(self.packages)
     }
