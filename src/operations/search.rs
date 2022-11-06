@@ -35,7 +35,7 @@ impl PackageSearchResult {
         similarity(query, &self.name)
     }
 
-    fn fmt_builder<'a>(&'a self) -> FmtBuilder<'a> {
+    fn fmt_builder(&self) -> FmtBuilder<'_> {
         let mut builder = FmtBuilder::new();
         builder
             .append({

@@ -11,7 +11,6 @@ pub enum Part<'a> {
     Borrowed(&'a str),
     Owned(String),
     Colored(ColoredString),
-    Eval(Box<dyn Fn() -> Part<'a>>),
     Empty,
 }
 
@@ -81,10 +80,6 @@ impl<'a> Part<'a> {
             Part::Borrowed(b) => Some(Cow::Borrowed(b)),
             Part::Owned(o) => Some(Cow::Borrowed(o)),
             Part::Colored(c) => Some(Cow::Owned(Self::fmt_colored(c, opts))),
-            Part::Eval(e) => {
-                let part = e();
-                part.fmt_string(opts).map(Cow::into_owned).map(Cow::Owned)
-            }
             Part::Empty => None,
         }
     }
@@ -98,32 +93,32 @@ impl<'a> Part<'a> {
     }
 }
 
-impl<'a> Into<Part<'a>> for String {
-    fn into(self) -> Part<'a> {
-        Part::Owned(self)
+impl<'a> From<String> for Part<'a> {
+    fn from(val: String) -> Self {
+        Part::Owned(val)
     }
 }
 
-impl<'a> Into<Part<'a>> for &'a str {
-    fn into(self) -> Part<'a> {
-        Part::Borrowed(self)
+impl<'a> From<&'a str> for Part<'a> {
+    fn from(val: &'a str) -> Self {
+        Part::Borrowed(val)
     }
 }
 
-impl<'a> Into<Part<'a>> for &'a String {
-    fn into(self) -> Part<'a> {
-        Part::Borrowed(self)
+impl<'a> From<&'a String> for Part<'a> {
+    fn from(val: &'a String) -> Self {
+        Part::Borrowed(val)
     }
 }
 
-impl<'a> Into<Part<'a>> for ColoredString {
-    fn into(self) -> Part<'a> {
-        Part::Colored(self)
+impl<'a> From<ColoredString> for Part<'a> {
+    fn from(val: ColoredString) -> Self {
+        Part::Colored(val)
     }
 }
 
-impl<'a, P: Into<Part<'a>>> Into<Part<'a>> for Option<P> {
-    fn into(self) -> Part<'a> {
-        self.map(P::into).unwrap_or(Part::Empty)
+impl<'a, P: Into<Part<'a>>> From<Option<P>> for Part<'a> {
+    fn from(val: Option<P>) -> Self {
+        val.map(P::into).unwrap_or(Part::Empty)
     }
 }
