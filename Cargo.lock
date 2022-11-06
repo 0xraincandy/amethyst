@@ -8,7 +8,6 @@ version = "4.1.0"
 dependencies = [
  "alpm",
  "alpm-utils",
- "async-recursion",
  "aur-rpc",
  "cargo_toml",
  "chrono",
@@ -44,7 +43,6 @@ dependencies = [
  "tracing-error",
  "tracing-subscriber",
  "trigram",
- "unic-langid",
 ]
 
 [[package]]
@@ -118,17 +116,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311"
 dependencies = [
  "libc",
-]
-
-[[package]]
-name = "async-recursion"
-version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2cda8f4bcc10624c4e85bc66b3f452cca98cfa5ca002dc83a16aad2367641bea"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
 ]
 
 [[package]]
