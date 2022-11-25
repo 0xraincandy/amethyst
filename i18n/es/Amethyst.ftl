@@ -16,7 +16,7 @@ missing-deps = Dependencias que faltan
 continue = ¿Continuar?
 following-packages = Se han encontrado los siguientes paquetes en el AUR:
 are-you-sure = ¿Está seguro de que quiere continuar?
-uninstalling-packages = Desinstalando paquetes: { $paquetes }
+uninstalling-packages = Desinstalando paquetes: { $packages }
 system-upgrade = Realizando la actualización del sistema
 removing-orphans = Eliminación de paquetes huérfanos
 couldnt-find-packages = No se han podido encontrar los paquetes { $packages } en los repos o en el AUR
@@ -33,7 +33,7 @@ zsh-error = Las terminaciones del shell de Zsh no se soportan actualmente debido
 no-orphans = No se han encontrado paquetes huérfanos
 removing-orphans-would =
     La eliminación de los paquetes huérfanos desinstalaría los siguientes paquetes:
-    { $paquetes }
+    { $packages }
 failed-remove-orphans = No se han podido eliminar los paquetes huérfanos
 success-remove-orphans = Paquetes huérfanos removidos con éxito
 clear-pacman-cache = ¿Borrar también la caché de paquetes de Pacman?
