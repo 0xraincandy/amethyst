@@ -8,8 +8,8 @@ packages =
 # main
 run-as-root = Ejecutar Amethyst como root no está permitido ya que puede llevar a la ruptura del sistema. En su lugar, Amethyst le avisará cuando necesite permisos de superusuario.
 aur-warning =
-    La AUR es una fuente de paquetes/scripts enviados por los usuarios y no siempre es segura.
-    Por favor, asegúrese de revisar el PKGBUILD de cualquier cosa que descargue de la AUR antes de instalarlo, ya que algunos PKGBUILDs pueden ser potencialmente maliciosos. 
+    El AUR es una fuente de paquetes/scripts enviados por los usuarios y no siempre es segura.
+    Por favor, asegúrese de revisar el PKGBUILD de cualquier cosa que descargue del AUR antes de instalarlo, ya que algunos PKGBUILDs pueden ser potencialmente maliciosos. 
     Esta advertencia puede activarse en el archivo de configuración.
 clear-pkgbuild-cache = ¿Limpiar la caché interna de PKGBUILD de Amethyst?
 missing-deps = Dependencias que faltan
