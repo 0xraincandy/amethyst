@@ -1,75 +1,89 @@
-<p align="center">
-  <a href="https://git.getcryst.al/crystal/software/amethyst">
-    <img src="./logo.svg" alt="Logo" width="150" height="150">
-  </a>
-</p>
+# Amethyst
 
-<h2 align="center">Amethyst</h2>
+Amethyst is a fast, efficient and lightweight AUR helper and Pacman wrapper.
 
-<p align="center">
-    <a href="https://getcryst.al/site/docs/amethyst/getting-started"><img src="https://img.shields.io/badge/Documentation-Click%20here!-informational"></a>
-    <a href="https://git.getcryst.al/crystal/software/amethyst"><img src="https://github.com/crystal-linux/amethyst/actions/workflows/test.yml/badge.svg"></a><br>
-    <a href="https://git.getcryst.al/crystal/software/amethyst/-/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg" alt="License"></a>
-    <a href="https://git.getcryst.al/crystal/software/amethyst/-/issues"><img alt="GitLab issues" src="https://img.shields.io/gitlab/issues/open-raw/crystal/software/amethyst?gitlab_url=https%3A%2F%2Fgit.getcryst.al"></a>
-    <a href="https://git.getcryst.al/crystal/software/amethyst/-/merge_requests"><img alt="GitLab merge requests" src="https://img.shields.io/gitlab/merge-requests/open-raw/crystal/software/amethyst?gitlab_url=https%3A%2F%2Fgit.getcryst.al"></a><br>
-    <a href="https://discord.gg/hYJgu8K5aA"><img alt="Discord" src="https://img.shields.io/discord/825473796227858482?color=blue&label=Discord&logo=Discord&logoColor=white"> </a>
-    <a href="https://git.getcryst.al/michal"><img src="https://img.shields.io/badge/Maintainer-@Michal%20Stopyra-brightgreen" alt="The maintainer of this repository" href="https://git.getcryst.al/michal"></a><br>
-    <a href="https://fosstodon.org/@crystal_linux"><img alt="Mastodon Follow" src="https://img.shields.io/mastodon/follow/108618426259408142?domain=https%3A%2F%2Ffosstodon.org"></a>
-    <a href="https://twitter.com/crystal_linux"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/crystal_linux"></a>
-</p>
-
-<p align="center"> 
-Amethyst is a fast, efficient and lightweight AUR helper and Pacman wrapper.<br> 
 Made for Crystal, compatible with any Arch-based Linux distribution.
-</p>
 
-### Basic usage
+## 💡 Features
 
-| Action                 | FreeBSD pkg-style alias | Pacman-style flags |
-|------------------------|-------------------------|--------------------|
-| Install a package      | ame ins/install         | ame -S             |
-| Remove a package       | ame rm/remove           | ame -R/-Rs         |
-| Upgrade a package      | ame upg/upgrade         | ame -Syu           |
-| Search for a package   | ame sea/search          | ame -Ss            |
-| Query the package list | ame qu/query            | ame -Q             |    
-| Show a package's info  | ame inf/info            | ame -Qi            |
-| Clean the pacman cache | ame cl/clean            | ame -Sc            |
-| Check for .pacnew      | ame di/diff             | ame -D             |
+- Fast and efficient!
+- Asynchronus!
+- Customizable!
+- Parallel package building
+- Install packages from the AUR and any added repositories
+- Search for packages in the AUR and any added repositories
 
-### Exit codes overview
+## 📚 Documentation
 
-| Exit Code (i32) | Reason                                                   |
-|-----------------|----------------------------------------------------------|
-| 1               | Running ame as UID 0 / root                              |
-| 2               | Failed creating paths                                    |
-| 3               | Could not find one or more required package dependencies |
-| 4               | User cancelled package installation                      |
-| 5               | Pacman error when installing package                     |
-| 6               | Git error                                                |
-| 7               | Makepkg error                                            |
-| 8               | Failed to parse config file                              |
-| 63              | Any other misc error                                     |
+Documentation for this project is available [here](https://getcryst.al/site/docs/amethyst/getting-started)!
+## 💾 Installation
 
-### Install on non-Crystal distros
-- `sudo pacman -S --needed base-devel pacman-contrib cargo`
-- `git clone https://git.getcryst.al/crystal/pkgbuilds/ame`
-- `cd ame && makepkg -si`  
+### 💽 From Binary
+
+**Install amethyst using `cargo`**
+```bash
+  $ cargo install --path .
+  $ ame help
+```
+
+    
+### 🏗 From Source
+
+**Install amethyst from source using `cargo`**
+
+ Debug/development builds
+
+ ```bash
+  $ git clone https://git.getcryst.al/crystal/software/amethyst.git && cd amethyst
+  $ cargo build
+  $ cargo run
+ ```
+
+Optimised/release builds
+
+ ```bash 
+  $ git clone https://git.getcryst.al/crystal/software/amethyst.git && cd amethyst
+  $ cargo install --path .
+ ```
+
+
+ Install on non-Crystal distros
+```bash
+sudo pacman -S --needed base-devel pacman-contrib cargo
+git clone https://git.getcryst.al/crystal/pkgbuilds/ame
+cd ame && makepkg -si
+```  
   
-Amethyst is also available as an [AUR package](https://aur.archlinux.org/packages/ame).
-<br>
+Amethyst is also available as an [AUR package](https://aur.archlinux.org/packages/ame)!
 
-#### Debug/development builds
+## 📸 Screenshots
 
-- `cargo build`
+![App Screenshot](/screenshot.png)
 
-#### Optimised/release builds
+## 🙌 Contributing
 
-- `cargo build --release`
+If you'd like to contribute to **amethyst**, please follow the [Crystal Linux contributing guidelines](https://git.getcryst.al/crystal/info/-/blob/main/CONTRIBUTING.md)!
 
-### TODO:
+This project uses This project uses `rustup`, to set up `rust` for **amethyst** development, please follow the guidelines below:
 
-#### v3.6.0
-- ~~Allow editing of PKGBUILDs before install~~
+```bash
+$ curl https://sh.rustup.rs -sSf | sh
+$ rustup default stable
+```
+
+(Via [rustup.rs](https://rustup.rs/))
+
+We are also constantly looking for translators for our i18n-enabled projects! If you speak more than one language, consider helping out on our [Weblate](https://i18n.getcryst.al)!
+
+![https://i18n.getcryst.al/engage/crystal-linux/](https://i18n.getcryst.al/widgets/crystal-linux/-/287x66-black.png)
+
+
+## 📜 License
+
+[GPLv3-only](https://choosealicense.com/licenses/gpl-3.0/)
+
+![](https://git.getcryst.al/crystal/misc/branding/-/raw/main/banners/README-banner.png)
+
 
 <!--
 
