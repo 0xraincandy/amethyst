@@ -28,7 +28,7 @@ installed-repo-packages = Paquetes del repositorio instalados:
 installed-aur-packages = Paquetes AUR instalados:
 installed-packages = Paquetes instalados:
 invalid-shell = Shell no válido, { $shell }
-zsh-error = Las terminaciones del shell de Zsh no se soportan actualmente debido a un error en la crate 'clap_completion'
+zsh-error = Las terminaciones del shell de ZSH no se soportan actualmente debido a un error en la crate 'clap_completion'
 # operations::clean
 no-orphans = No se han encontrado paquetes huérfanos
 removing-orphans-would =
