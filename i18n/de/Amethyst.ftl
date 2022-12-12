@@ -5,8 +5,8 @@ packages =
         [one] Paket
        *[other] Pakete
     }
-missing-deps = Fehlende Packetabhängigkeiten
-continue = Fortfahren?
+missing-deps = Fehlende Paketabhängigkeiten
+continue = Wollen Sie fortfahren?
 # main
 run-as-root = Amethyst mit root Berechtigungen auszuführen ist nicht erlaubt und kann zu korrupten Systemen führen. Amethyst wird nach root Berechtigungen fragen, wenn diese nötig sein sollten.
 following-packages = Folgende Pakete wurden in dem AUR gefunden:
