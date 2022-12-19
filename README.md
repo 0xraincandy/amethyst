@@ -64,7 +64,7 @@ Amethyst is also available as an [AUR package](https://aur.archlinux.org/package
 
 If you'd like to contribute to **amethyst**, please follow the [Crystal Linux contributing guidelines](https://git.getcryst.al/crystal/info/-/blob/main/CONTRIBUTING.md)!
 
-This project uses This project uses `rustup`, to set up `rust` for **amethyst** development, please follow the guidelines below:
+This project uses `rustup`, to set up `rust` for **amethyst** development, please follow the guidelines below:
 
 ```bash
 $ curl https://sh.rustup.rs -sSf | sh
