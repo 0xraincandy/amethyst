@@ -15,7 +15,10 @@ use tokio::{
     task,
 };
 
-use crate::error::{AppError, AppResult};
+use crate::{
+    builder::git::GitResetBuilder,
+    error::{AppError, AppResult},
+};
 use crate::{
     builder::{
         git::{GitCloneBuilder, GitPullBuilder},
@@ -56,6 +59,10 @@ pub async fn download_aur_source(mut ctx: BuildContext) -> AppResult<BuildContex
             pkg_name.clone().bold(),
             fl!("pulling-latest-changes")
         ));
+        GitResetBuilder::default()
+            .directory(&pkg_dir)
+            .reset()
+            .await?;
         GitPullBuilder::default().directory(&pkg_dir).pull().await?;
     } else {
         let aur_url = crate::internal::rpc::URL;

@@ -67,3 +67,33 @@ impl GitPullBuilder {
         }
     }
 }
+
+#[derive(Debug, Default)]
+pub struct GitResetBuilder {
+    directory: PathBuf,
+}
+
+impl GitResetBuilder {
+    pub fn directory<P: AsRef<Path>>(mut self, path: P) -> Self {
+        self.directory = path.as_ref().into();
+
+        self
+    }
+
+    pub async fn reset(self) -> AppResult<()> {
+        let result = ShellCommand::git()
+            .arg("-C")
+            .arg(self.directory)
+            .arg("reset")
+            .arg("HEAD")
+            .arg("--hard")
+            .wait_with_output()
+            .await?;
+
+        if result.status.success() {
+            Ok(())
+        } else {
+            Err(AppError::Other(result.stderr))
+        }
+    }
+}
