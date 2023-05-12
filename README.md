@@ -7,16 +7,17 @@ Made for Crystal, compatible with any Arch-based Linux distribution.
 ## 💡 Features
 
 - Fast and efficient!
-- Asynchronus!
+- Asynchronous!
 - Customizable!
 - Parallel package building
-- Install packages from the AUR and any added repositories
-- Search for packages in the AUR and any added repositories
+- Install and search packages from the AUR and any added repositories
 
 ## 📚 Documentation
 
 Documentation for this project is available [here](https://getcryst.al/site/docs/amethyst/getting-started)!
 ## 💾 Installation
+
+> On Crystal Linux, Amethyst comes pre-installed.
 
 ### 💽 From Binary
 
