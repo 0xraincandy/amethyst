@@ -151,7 +151,7 @@ pub async fn repo_search(query: &str, options: Options) -> Vec<PackageSearchResu
 
     let mut results = Vec::new();
     for db in dbs {
-        let packages = db.search(vec![query].iter()).unwrap();
+        let packages = db.search([query].iter()).unwrap();
 
         for package in packages {
             let name = package.name();
