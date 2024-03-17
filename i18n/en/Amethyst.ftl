@@ -58,6 +58,7 @@ success-upgrade-repo-pkgs = Successfully upgraded repo packages
 couldnt-find-remote-pkg = Could not find the remote package for {$pkg}
 no-upgrades-aur-package = No upgrades available for installed AUR packages
 scanning-for-pacnew = Scanning for .pacnew files post-upgrade
+aur-check-upgrades = Checking for AUR package upgrades
 
 # logging::output
 repo-dependencies = Repo dependencies

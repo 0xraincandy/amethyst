@@ -49,6 +49,7 @@ async fn upgrade_repo(options: Options) {
 #[tracing::instrument(level = "trace")]
 async fn upgrade_aur(options: Options) {
     tracing::debug!("Upgrading AUR packages");
+    fl_info!("aur-check-upgrades");
 
     let non_native_pkgs = PacmanQueryBuilder::foreign()
         .color(PacmanColor::Never)
