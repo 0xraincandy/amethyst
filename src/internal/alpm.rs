@@ -48,7 +48,7 @@ pub enum PackageFrom {
 }
 
 pub enum AlpmPackage<'a> {
-    Found(alpm::Package<'a>),
+    Found(&'a alpm::Package),
     Loaded(alpm::LoadedPackage<'a>),
 }
 
@@ -102,7 +102,7 @@ impl Alpm {
 
     pub fn group_packages(&self, group_name: String) -> Result<Vec<AlpmPackage>, Error> {
         let mut packages = Vec::new();
-        for db in &self.0.syncdbs() {
+        for db in self.0.syncdbs() {
             if let Ok(group) = db.group(group_name.clone()) {
                 for package in group.packages() {
                     packages.push(AlpmPackage::Found(package));

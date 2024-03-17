@@ -25,7 +25,7 @@ pub async fn clean(options: Options) {
         .await
         .unwrap();
 
-    if orphaned_packages.stdout.as_str().is_empty() {
+    if orphaned_packages.stdout.is_empty() {
         // If no orphaned packages found, do nothing
         fl_info!("no-orphans");
     } else {

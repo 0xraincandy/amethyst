@@ -244,7 +244,7 @@ impl Theme for AmeTheme {
 
         if highlight_matches {
             if let Some((_score, indices)) = matcher.fuzzy_indices(text, search_term) {
-                for (idx, c) in text.chars().into_iter().enumerate() {
+                for (idx, c) in text.chars().enumerate() {
                     if indices.contains(&idx) {
                         write!(f, "{}", c.bold())?;
                     } else {
