@@ -247,10 +247,14 @@ async fn build_package(
 
     for archive in archives {
         if !archive.try_exists()? {
-            fl_warn!(
-                "package-does-not-exist",
-                package = archive.display().to_string()
-            );
+            if archive.file_name().is_some_and(|f| f.to_str().is_some_and(|f| f.contains("debug"))) {
+                tracing::debug!("Pacakge {archive:?} does not exist, skipping...");
+            } else {
+                fl_warn!(
+                    "package-does-not-exist",
+                    package = archive.display().to_string()
+                );
+            }
             continue;
         }
 
