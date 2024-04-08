@@ -17,7 +17,8 @@ use tokio::{
 
 use crate::{
     builder::git::GitResetBuilder,
-    error::{AppError, AppResult}, fl_warn,
+    error::{AppError, AppResult},
+    fl_warn,
 };
 use crate::{
     builder::{
@@ -246,10 +247,13 @@ async fn build_package(
 
     for archive in archives {
         if !archive.try_exists()? {
-            fl_warn!("package-does-not-exist", package = archive.display().to_string());
+            fl_warn!(
+                "package-does-not-exist",
+                package = archive.display().to_string()
+            );
             continue;
         }
-        
+
         let pkg = alpm.load(PackageFrom::File(archive.clone()))?;
         let name = pkg.name().to_owned();
         pkgs_produced.insert(name, archive);
@@ -299,6 +303,7 @@ async fn show_and_log_stdio(
     let mut out_writer = BufWriter::new(
         OpenOptions::new()
             .create(true)
+            .truncate(true)
             .write(true)
             .open(out_file)
             .await?,
