@@ -122,6 +122,7 @@ aur-rpc-crash = AUR RPC Call failed with: {$error}
 failed-to-build = Failed to build
 makepkg-failed = makepkg failed
 unknown-error = Unknown error
+package-does-not-exist = Package {$package} does not exist, skipping...
 
 # internal::error
 non-zero-exit = Exited with non zero code
