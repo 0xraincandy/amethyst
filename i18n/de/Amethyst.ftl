@@ -53,6 +53,7 @@ success-upgrade-repo-pkgs = Pakete aus Pacman-Paketquellen wurden erfolgreich ak
 couldnt-find-remote-pkg = Remotepaket für { $pkg } konnte nicht gefunden werden
 no-upgrades-aur-package = Keine Aktualisierungen für AUR Pakete gefunden
 scanning-for-pacnew = Scanne für .pacnew Dateien nach Aktualisierung
+select-pkgs-upgrade = Wähle aus, welche AUR Pakete aktualisiert werden sollen
 # logging::output
 repo-dependencies = Paketabhängigkeiten aus den Pacman-Paketquellen
 aur-dependencies = Paketabhängigkeiten aus der AUR

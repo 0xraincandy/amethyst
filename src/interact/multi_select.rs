@@ -7,6 +7,7 @@ use super::{theme::AmeTheme, Interact};
 pub struct AmeMultiSelect {
     prompt: String,
     items: Vec<String>,
+    defaults: Vec<bool>,
 }
 
 impl AmeMultiSelect {
@@ -15,12 +16,20 @@ impl AmeMultiSelect {
         Self {
             prompt: prompt.to_string(),
             items: Vec::new(),
+            defaults: Vec::new(),
         }
     }
 
     /// Adds/replaces the items of this multi select
     pub fn items<I: IntoIterator<Item = S>, S: ToString>(&mut self, items: I) -> &mut Self {
-        self.items = items.into_iter().map(|i| i.to_string()).collect();
+        self.defaults = Vec::new();
+        self.items = items
+            .into_iter()
+            .map(|i| {
+                self.defaults.push(true);
+                i.to_string()
+            })
+            .collect();
 
         self
     }
@@ -34,6 +43,7 @@ impl Interact for AmeMultiSelect {
             dialoguer::MultiSelect::with_theme(AmeTheme::get())
                 .with_prompt(mem::take(&mut self.prompt))
                 .items(&self.items)
+                .defaults(&self.defaults)
                 .interact()
                 .unwrap()
         })
