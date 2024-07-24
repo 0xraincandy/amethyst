@@ -7,7 +7,7 @@ use crate::internal::detect;
 use crate::internal::exit_code::AppExitCode;
 use crate::internal::rpc::rpcinfo;
 use crate::operations::aur_install::aur_install;
-use crate::{fl_error, fl_info, fl_warn, Options};
+use crate::{fl, fl_error, fl_info, fl_warn, multi_select, Options};
 
 /// Upgrades all installed packages
 #[tracing::instrument(level = "trace")]
@@ -79,12 +79,27 @@ async fn upgrade_aur(options: Options) {
         }
     }
 
-    if !aur_upgrades.is_empty() {
+    if aur_upgrades.is_empty() {
+        fl_info!("no-upgrades-aur-package");
+    }
+
+    // :( bad
+    let mut to_upgrade = Vec::new();
+    if aur_upgrades.is_empty() {
+        to_upgrade = aur_upgrades
+    } else {
+        let upgrade = multi_select!(aur_upgrades.clone(), "{}", fl!("select-pkgs-upgrade"));
+        for pkg in upgrade.into_iter().filter_map(|i| aur_upgrades.get(i)) {
+            to_upgrade.push(pkg.clone());
+        }
+    };
+
+    if !to_upgrade.is_empty() {
         let options = Options {
             upgrade: true,
             ..options
         };
-        aur_install(aur_upgrades, options).await;
+        aur_install(to_upgrade, options).await;
     } else {
         fl_info!("no-upgrades-aur-package");
     }
