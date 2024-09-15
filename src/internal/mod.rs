@@ -35,11 +35,7 @@ macro_rules! uwu {
 pub fn uwu_enabled() -> bool {
     let config = config::Config::get();
     if let Some(uwu) = &config.extra {
-        if let Some(uwu) = uwu.uwu {
-            uwu
-        } else {
-            false
-        }
+        uwu.uwu.unwrap_or(false)
     } else {
         false
     }

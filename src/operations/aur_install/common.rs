@@ -318,7 +318,7 @@ async fn show_and_log_stdio(
 
     while let Ok(line) = reader.read_line().await {
         let _ = out_writer.write(line.as_bytes()).await?;
-        let _ = out_writer.write(&[b'\n']).await?;
+        let _ = out_writer.write(b"\n").await?;
         tracing::trace!("{package_name}: {line}");
         let line = format!("{}: {}", package_name.clone().bold(), line);
         let lines = wrap_text(line, 2);
