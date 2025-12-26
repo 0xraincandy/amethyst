@@ -1,3 +1,6 @@
+[![License](https://img.shields.io/badge/license-GPLv3-brightgreen)]()
+[![Language](https://img.shields.io/badge/language-Python%20%2B%20C-blue)]()
+
 # Amethyst
 
 I fixed the AUR Helper Amethyst from Crystal Linux myself because its likely that it won't get updated.
