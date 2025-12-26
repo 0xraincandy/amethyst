@@ -1,7 +1,6 @@
 use std::{
     fmt::{Display, Formatter},
-    path::Path,
-    path::PathBuf,
+    path::{Path, PathBuf},
 };
 
 use alpm::SigLevel;
@@ -67,6 +66,7 @@ impl Alpm {
     #[tracing::instrument(level = "trace")]
     pub fn new() -> Result<Self, Error> {
         let config = Config::from_file(Path::new("/etc/pacman.conf"))?;
+        // Removed SigLevel argument for alpm-utils 5.x
         let alpm = alpm_with_conf(&config)?;
         tracing::debug!("Initialized alpm handler");
         Ok(Self(alpm))
@@ -81,16 +81,16 @@ impl Alpm {
             }
             PackageFrom::SyncDb(name) => {
                 let package = self
-                    .0
-                    .syncdbs()
-                    .find_satisfier(name)
-                    .ok_or(Error::Alpm(alpm::Error::PkgNotFound))?;
+                .0
+                .syncdbs()
+                .find_satisfier(name)
+                .ok_or(Error::Alpm(alpm::Error::DbNotFound))?; // updated
                 Ok(AlpmPackage::Found(package))
             }
             PackageFrom::File(path) => {
                 let package = self
-                    .0
-                    .pkg_load(path.to_str().unwrap(), true, SigLevel::NONE)?;
+                .0
+                .pkg_load(path.to_str().unwrap(), true, SigLevel::USE_DEFAULT)?; // keep USE_DEFAULT
                 Ok(AlpmPackage::Loaded(package))
             }
         }
@@ -110,7 +110,7 @@ impl Alpm {
             }
         }
         if packages.is_empty() {
-            return Err(Error::Alpm(alpm::Error::PkgNotFound));
+            return Err(Error::Alpm(alpm::Error::DbNotFound)); // updated
         }
         Ok(packages)
     }

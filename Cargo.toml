@@ -28,9 +28,9 @@ opt-level = 0
 
 [dependencies]
 minus = { version = "5.0.5", features = ["search", "static_output"] }
-alpm = "4.0.0"
-alpm-utils = "4.0.1"
-pacmanconf = "3.0.0"
+alpm = "5"
+alpm-utils = "5"
+pacmanconf = "3"
 chrono = { version = "0.4.22", default-features = false, features = [ "clock", "std", "wasmbind" ] }
 trigram = "0.4.4"
 clap = { version = "4.0.19", features = [ "derive", "wrap_help" ] }
@@ -69,8 +69,9 @@ features = ["toml"]
 
 [dependencies.tokio]
 version = "1.21.0"
-features = ["process", "macros", "rt-multi-thread", "tracing"]
+features = ["process", "macros", "rt-multi-thread", "tracing", "fs"]
+
 
 [build-dependencies]
-cargo_toml = "0.13.0"
+cargo_toml = "0.14"
 serde = { version = "1.0.147", features = ["derive"] }
