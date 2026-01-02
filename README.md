@@ -17,5 +17,3 @@ copy the binary
 ``sudo mv ~/amethyst/target/release/ame /usr/bin/``
 
 
-The original project:
-https://gitlab.com/crystal-linux/software/amethyst
